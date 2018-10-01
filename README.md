@@ -3,7 +3,7 @@ FizzBuzz
 =======
 
 ---
-## FizzBuzz example 1 ######
+## FizzBuzz in ABAP ######
 ---
 
 Abap implementation of the FizzBuzz problem
