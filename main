@@ -1,0 +1,89 @@
+*&---------------------------------------------------------------------*
+*& Report YCTPROBA5
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT YCTPROBA5.
+
+INITIALIZATION.
+
+  DATA: NUM        TYPE INT8 VALUE 0,
+        DIVISION3  TYPE XFELD VALUE SPACE,
+        DIVISION5  TYPE XFELD VALUE SPACE,
+        DIVISION15 TYPE XFELD VALUE SPACE.
+
+  NUM = 30.
+
+start-OF-SELECTION.
+
+  PERFORM DIVIDE3 USING NUM CHANGING DIVISION3.
+  PERFORM DIVIDE5 USING NUM CHANGING DIVISION5.
+  PERFORM DIVIDE15 USING NUM CHANGING DIVISION15.
+
+  end-OF-SELECTION.
+
+  IF DIVISION3 EQ 'X' AND DIVISION5 EQ 'X'.
+
+    CL_DEMO_OUTPUT=>DISPLAY( 'fizzbuzz' ).
+  ELSE.
+
+IF DIVISION3 EQ 'X'.
+   CL_DEMO_OUTPUT=>DISPLAY( 'fizz' ).
+endif.
+
+IF DIVISION5 EQ 'X'.
+   CL_DEMO_OUTPUT=>DISPLAY( 'buzz' ).
+endif.
+
+  ENDIF.
+
+
+
+FORM DIVIDE3 USING VALUE(NUM) CHANGING DIVISION3.
+  CLEAR DIVISION3.
+
+  DATA: L_NUM TYPE I VALUE 0.
+
+  L_NUM = NUM MOD 3.
+
+  IF L_NUM EQ 0.
+
+    DIVISION3 = 'X'.
+
+  ENDIF.
+
+
+ENDFORM.
+
+
+FORM DIVIDE5 USING VALUE(NUM) CHANGING DIVISION5.
+
+  CLEAR DIVISION5.
+
+  DATA: L_NUM TYPE I VALUE 0.
+
+  L_NUM = NUM MOD 5.
+
+  IF L_NUM EQ 0.
+
+    DIVISION5 = 'X'.
+
+  ENDIF.
+
+ENDFORM.
+
+FORM DIVIDE15 USING VALUE(NUM) CHANGING DIVISION15.
+
+  CLEAR DIVISION15.
+
+  DATA: L_NUM TYPE I VALUE 0.
+
+  L_NUM = NUM MOD 15.
+
+  IF L_NUM EQ 0.
+
+    DIVISION15 = 'X'.
+
+  ENDIF.
+
+ENDFORM.
