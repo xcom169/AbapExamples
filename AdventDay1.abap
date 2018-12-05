@@ -13,7 +13,6 @@ data: int type i value 0,
 
 data: begin of wa,
       num type i,
-      partsum type i value 0,
       end of wa.
 
 data: begin of wa2,
@@ -1072,7 +1071,7 @@ sum = sum + wa1-num.
 
 endloop.
 uline.
-Write:/ 'Az összeeg: ', sum.
+Write:/ 'Az összeg: ', sum.
 
 clear sum.
 
