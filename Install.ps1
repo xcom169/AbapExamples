@@ -39,3 +39,4 @@ choco install vscode.install -version 1.43.2 -y
 choco install youtube-dl -version 2020.03.24 -y
 choco install viber -y
 choco install speedcrunch -y
+choco install electrum -y
