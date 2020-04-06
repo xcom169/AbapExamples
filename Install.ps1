@@ -37,3 +37,4 @@ choco install vlc -version 3.0.8 -y
 choco install vscode -version 1.43.2 -y
 choco install vscode.install -version 1.43.2 -y
 choco install youtube-dl -version 2020.03.24 -y
+choco install viber -y
